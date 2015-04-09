@@ -6,8 +6,13 @@ application up and running.
 Things you may want to cover:
 
 * Ruby version
+    ruby 2.0.0p598
+
+* Rails version
+    Rails 4.1.8
 
 * System dependencies
+    
 
 * Configuration
 
