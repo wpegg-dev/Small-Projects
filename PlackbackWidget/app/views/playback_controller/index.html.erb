@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <title>Playback Widget</title>
+
+  
+
+  <link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css'>
+  <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css'>
+  <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js'>
+  
+  <link rel='text/javascript prefetch' href='https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js'>
+  <link rel='text/javascript prefetch' href='https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/jquery-ui.min.js'>
+	<%= stylesheet_link_tag    media: "all" %>
+	<%= javascript_include_tag "application" %>
+	<!--<%= audio_tag("ThriftShop.mp3")%>-->
+
+</head>
+
+<body>
+  <div class="container">
+	  <div id="spectrum"></div>
+	  <div class="wrap">
+	    <div class="volume-control-panel">
+	      <button id="vol-dec" class="volume-btn volume-btn-minus glyphicon glyphicon-minus"></button>
+	      <button id="vol-inc" class="volume-btn volume-btn-plus glyphicon glyphicon-plus"></button>
+	      <div class="volume-bar">
+	        <div id="vol-value" class="volume-value"></div>
+	      </div>
+	    </div>
+	    <button id="butt" class="btn btn-warning btn-xlg glyphicon glyphicon-play"></button>
+	  </div>
+	  <div id="restartDialog" title="Restart" >
+		<p>Would you like to restart?</p>
+		<button type="buttton" class="btn btn-success">Yes</button>
+		<button type="buttton" class="btn btn-info">No</button>
+	</div>
+	</div>
+</body>
+
+</html>

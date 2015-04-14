@@ -1,0 +1,74 @@
+html
+body
+	height 100%
+
+.conatiner
+	position absolute
+	top 0
+	left 0
+	right 0
+	bottom 0
+
+#spectrum
+	position absolute
+	background-color #222
+	top 0
+	bottom 0
+	right 0
+	left 0
+#spectrum *
+	position absolute
+	bottom 0
+	width 20px
+	background-color lightgreen
+
+.wrap
+	width 200px
+	margin auto
+	position absolute
+	top 50%
+	left 50%
+	transform translate(-50%,-50%)
+
+.volume-control-panel
+	display block
+	width 200px
+	margin 0 auto
+	margin-bottom 10px
+	clearfix()
+
+.volume-btn
+	display block	
+	width 20%
+	top 0
+	height 30px
+	color #08f
+	background-color #fff
+	border 1px solid #08f
+	outline none
+	&-minus
+		float left
+		border-right none
+	&-plus
+		float right
+		border-left none
+
+.volume-bar
+	width 60%
+	height 30px
+	border 1px solid #08f
+	margin 0 auto
+	position relative
+
+.volume-value
+	position absolute
+	left 0
+	top 0
+	bottom 0
+	background-color #08f
+
+.btn-xlg
+	display block
+	width 200px
+	height 100px
+	font-size 32px
