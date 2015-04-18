@@ -5,14 +5,16 @@ body {
 	background: linear-gradient(90deg, #7474BF 10%, #348AC7 90%);
 }
 #weather_wrapper{
-	width: 400px;
-	margin: 100px auto;
+	margin-right:auto;
+	margin-left:auto;
 }
 .weatherCard{
 	width: 400px;
 	height: 200px;
 	font-family: 'Open Sans';
 	position: relative;
+	margin-right: auto;
+	margin-left:auto;
 }
 .currentTemp{
 	width: 220px;
@@ -37,7 +39,7 @@ body {
 	display: block;
 	font-weight: 300;
 	color: rgb(255, 255, 255);
-	padding: 20px 0 0;
+	padding: 0 0  0 0;
 }
 .location{
 	color: rgb(255, 255, 255);
@@ -96,4 +98,256 @@ body {
 	left: -10px;
 	position: absolute;
 	top: 5px;
+}
+/*********************** Weekday CSS *****************************/
+.day0Card{
+	width: 400px;
+	height: 200px;
+	font-family: 'Open Sans';
+	position: relative;
+	margin-top:inherit;
+}
+.day0Temp{
+	font-size: 45px;
+	text-align: center;
+	display: block;
+	font-weight: 300;
+	color: rgb(255, 255, 255);
+	padding: 20px 0 0;
+}
+.day0Weather{
+	width: 180px;
+	height: 275px;
+	background: rgb(237, 237, 237);
+	margin: 0;
+	position: absolute;
+	top: 75px;
+	right: 220px;
+}
+.day0Temp{
+	width: 180px;
+	height: 75px;
+	background: rgb(41, 41, 41);
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+.day1Card{
+	width: 400px;
+	height: 200px;
+	font-family: 'Open Sans';
+	position: relative;
+	left: 181px;
+  	top: -200px;
+  	
+}
+.day1Temp{
+	font-size: 45px;
+	text-align: center;
+	display: block;
+	font-weight: 300;
+	color: rgb(255, 255, 255);
+	padding: 20px 0 0;
+}
+.day1Weather{
+	width: 180px;
+	height: 275px;
+	background: rgb(237, 237, 237);
+	margin: 0;
+	position: absolute;
+	top: 75px;
+	right: 220px;
+}
+.day1Temp{
+	width: 180px;
+	height: 75px;
+	background: rgb(41, 41, 41);
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+.day2Card{
+	width: 400px;
+	height: 200px;
+	font-family: 'Open Sans';
+	position: relative;
+	left: 362px;
+  	top: -400px;
+  	
+}
+.day2Temp{
+	font-size: 45px;
+	text-align: center;
+	display: block;
+	font-weight: 300;
+	color: rgb(255, 255, 255);
+	padding: 20px 0 0;
+}
+.day2Weather{
+	width: 180px;
+	height: 275px;
+	background: rgb(237, 237, 237);
+	margin: 0;
+	position: absolute;
+	top: 75px;
+	right: 220px;
+}
+.day2Temp{
+	width: 180px;
+	height: 75px;
+	background: rgb(41, 41, 41);
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+.day3Card{
+	width: 400px;
+	height: 200px;
+	font-family: 'Open Sans';
+	position: relative;
+	left: 543px;
+  	top: -600px;
+  	
+}
+.day3Temp{
+	font-size: 45px;
+	text-align: center;
+	display: block;
+	font-weight: 300;
+	color: rgb(255, 255, 255);
+	padding: 20px 0 0;
+}
+.day3Weather{
+	width: 180px;
+	height: 275px;
+	background: rgb(237, 237, 237);
+	margin: 0;
+	position: absolute;
+	top: 75px;
+	right: 220px;
+}
+.day3Temp{
+	width: 180px;
+	height: 75px;
+	background: rgb(41, 41, 41);
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+.day4Card{
+	width: 400px;
+	height: 200px;
+	font-family: 'Open Sans';
+	position: relative;
+	left: 724px;
+  	top: -800px;
+  	
+}
+.day4Temp{
+	font-size: 45px;
+	text-align: center;
+	display: block;
+	font-weight: 300;
+	color: rgb(255, 255, 255);
+	padding: 20px 0 0;
+}
+.day4Weather{
+	width: 180px;
+	height: 275px;
+	background: rgb(237, 237, 237);
+	margin: 0;
+	position: absolute;
+	top: 75px;
+	right: 220px;
+}
+.day4Temp{
+	width: 180px;
+	height: 75px;
+	background: rgb(41, 41, 41);
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+.day5Card{
+	width: 400px;
+	height: 200px;
+	font-family: 'Open Sans';
+	position: relative;
+	left: 905px;
+  	top: -1000px;
+  	
+}
+.day5Temp{
+	font-size: 45px;
+	text-align: center;
+	display: block;
+	font-weight: 300;
+	color: rgb(255, 255, 255);
+	padding: 20px 0 0;
+}
+.day5Weather{
+	width: 180px;
+	height: 275px;
+	background: rgb(237, 237, 237);
+	margin: 0;
+	position: absolute;
+	top: 75px;
+	right: 220px;
+}
+.day5Temp{
+	width: 180px;
+	height: 75px;
+	background: rgb(41, 41, 41);
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+.day6Card{
+	width: 400px;
+	height: 200px;
+	font-family: 'Open Sans';
+	position: relative;
+	left: 1086px;
+  	top: -1200px;
+  	
+}
+.day6Temp{
+	font-size: 45px;
+	text-align: center;
+	display: block;
+	font-weight: 300;
+	color: rgb(255, 255, 255);
+	padding: 20px 0 0;
+}
+.day6Weather{
+	width: 180px;
+	height: 275px;
+	background: rgb(237, 237, 237);
+	margin: 0;
+	position: absolute;
+	top: 75px;
+	right: 220px;
+}
+.day6Temp{
+	width: 180px;
+	height: 75px;
+	background: rgb(41, 41, 41);
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+.weekForecast{
+	width: 1300px;
+	height: 300px;
+	font-family: 'Open Sans';
+	position: relative;
+	margin-right: auto;
+	margin-left:auto;
+	margin-top: 10px;
+}
+.summary{
+	font-size: 15px;
+	font-family: 'Open Sans';
+	position: absolute;
+	text-align:center;
 }
