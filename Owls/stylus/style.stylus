@@ -1,0 +1,340 @@
+@import "nib"
+
+/* **************
+   Quick Reset
+************** */
+html
+  box-sizing border-box
+html
+body
+  margin 0
+  padding 0
+  height 100%
+  overflow hidden
+body
+  background-color #017480
+  display flex
+  flex-flow row nowrap
+  justify-content center
+  align-items center
+  &:after
+    content ''
+    position absolute
+    right 0
+    
+    width 20%
+    height 100%
+    background-color #09585F
+    
+*
+*:before
+*:after
+  box-sizing inherit
+
+
+/* **********
+   Style
+********** */
+.owl
+  width 30vmin
+  height 46vmin
+  background-color #FFF3CD
+  border-radius 10% 0% 0% 65% / 0% 0% 0% 50%
+  position absolute
+  right 30%
+  bottom 20vmin
+.owl__head
+  width 100%
+  height 15vmin
+  background-color #F6946A
+  position relative
+  overflow hidden
+  z-index 1
+  &:before
+    content ''
+    position absolute
+    top -4vmin
+    height 8vmin
+    right 0
+    left 0
+    background-color #017480
+    border-radius 6vmin
+
+.owl__eyes
+  height 15vmin
+  width 100%
+  position relative
+  top -7.5vmin
+  display flex
+  align-items center
+  justify-content center
+  &:after
+    content ''
+    position absolute
+    bottom 0
+    right 0
+    left 0
+    margin auto
+    width 0
+    height 0
+    z-index 0
+    border-style solid
+    border-width 15vmin 15vmin 0 15vmin
+    border-color #FFCD66 transparent transparent transparent
+.owl__eye
+  width 5vmin
+  height 5vmin
+  margin 0 5vmin
+  border-radius 50%
+  background-color #666
+  box-shadow 0 0 0 2.5vmin #FFCD66, 0 0 0 5vmin #FFFCE8
+  z-index 1
+
+.owl__legs
+  height 12vmin
+  width 100%
+  display flex
+  align-items center
+  justify-content center
+.owl__leg
+  width 5vmin
+  height 5vmin
+  margin 0 5vmin
+  border-radius 50%
+  background-color #FFCD66
+  
+ .owl_1
+  width 30vmin
+  height 46vmin
+  background-color #EDDBC4
+  border-radius 10% 0% 0% 65% / 0% 0% 0% 50%
+  position absolute
+  right 40%
+  bottom 20vmin
+.owl_1__head
+  width 100%
+  height 15vmin
+  background-color #F6946A
+  position relative
+  overflow hidden
+  z-index 1
+  &:before
+    content ''
+    position absolute
+    top -4vmin
+    height 8vmin
+    right 0
+    left 0
+    background-color #017480
+    border-radius 6vmin
+
+.owl_1__eyes
+  height 15vmin
+  width 100%
+  position relative
+  top -7.5vmin
+  display flex
+  align-items center
+  justify-content center
+  &:after
+    content ''
+    position absolute
+    bottom 0
+    right 0
+    left 0
+    margin auto
+    width 0
+    height 0
+    z-index 0
+    border-style solid
+    border-width 15vmin 15vmin 0 15vmin
+    border-color #FFB353 transparent transparent transparent
+.owl_1__eye
+  width 5vmin
+  height 5vmin
+  margin 0 5vmin
+  border-radius 50%
+  background-color #5C5259
+  box-shadow 0 0 0 2.5vmin #A3C9A7, 0 0 0 5vmin #FFFCE8
+  z-index 1
+
+.owl_1__legs
+  height 12vmin
+  width 100%
+  display flex
+  align-items center
+  justify-content center
+.owl_1__leg
+  width 5vmin
+  height 5vmin
+  margin 0 5vmin
+  border-radius 50%
+  background-color #FFB353
+
+ .owl_2
+  width 30vmin
+  height 46vmin
+  background-color #FCFDFF
+  border-radius 10% 0% 0% 65% / 0% 0% 0% 50%
+  position absolute
+  right 50%
+  bottom 20vmin
+.owl_2__head
+  width 100%
+  height 15vmin
+  background-color #e8e9ed
+  position relative
+  overflow hidden
+  z-index 1
+  &:before
+    content ''
+    position absolute
+    top -4vmin
+    height 8vmin
+    right 0
+    left 0
+    background-color #017480
+    border-radius 6vmin
+
+.owl_2__eyes
+  height 15vmin
+  width 100%
+  position relative
+  top -7.5vmin
+  display flex
+  align-items center
+  justify-content center
+  &:after
+    content ''
+    position absolute
+    bottom 0
+    right 0
+    left 0
+    margin auto
+    width 0
+    height 0
+    z-index 0
+    border-style solid
+    border-width 15vmin 15vmin 0 15vmin
+    border-color #A6AEC1 transparent transparent transparent
+.owl_2__eye
+  width 5vmin
+  height 5vmin
+  margin 0 5vmin
+  border-radius 50%
+  background-color #6C788E
+  box-shadow 0 0 0 2.5vmin #A6AEC1, 0 0 0 5vmin #CFD5E1
+  z-index 1
+
+.owl_2__legs
+  height 12vmin
+  width 100%
+  display flex
+  align-items center
+  justify-content center
+.owl_2__leg
+  width 5vmin
+  height 5vmin
+  margin 0 5vmin
+  border-radius 50%
+  background-color #A6AEC1
+  
+.owl_3
+  width 30vmin
+  height 46vmin
+  background-color #CB6687
+  border-radius 10% 0% 0% 65% / 0% 0% 0% 50%
+  position absolute
+  right 60%
+  bottom 20vmin
+.owl_3__head
+  width 100%
+  height 15vmin
+  background-color #805171
+  position relative
+  overflow hidden
+  z-index 1
+  &:before
+    content ''
+    position absolute
+    top -4vmin
+    height 8vmin
+    right 0
+    left 0
+    background-color #017480
+    border-radius 6vmin
+
+.owl_3__eyes
+  height 15vmin
+  width 100%
+  position relative
+  top -7.5vmin
+  display flex
+  align-items center
+  justify-content center
+  &:after
+    content ''
+    position absolute
+    bottom 0
+    right 0
+    left 0
+    margin auto
+    width 0
+    height 0
+    z-index 0
+    border-style solid
+    border-width 15vmin 15vmin 0 15vmin
+    border-color #F7965D transparent transparent transparent
+.owl_3__eye
+  width 5vmin
+  height 5vmin
+  margin 0 5vmin
+  border-radius 50%
+  background-color #5C5259
+  box-shadow 0 0 0 2.5vmin #BFC365, 0 0 0 5vmin #FBD776
+  z-index 1
+
+.owl_3__legs
+  height 12vmin
+  width 100%
+  display flex
+  align-items center
+  justify-content center
+.owl_3__leg
+  width 5vmin
+  height 5vmin
+  margin 0 5vmin
+  border-radius 50%
+  background-color #F7965D
+
+.moon
+  width 30vmin
+  height 30vmin
+  top 10vmin
+  left 10vmin
+  position absolute
+  border-radius 50%
+  background-color #0E91A0
+  &:after
+    content ''
+    position absolute
+    width 90%
+    height 90%
+    top -5%
+    left 15%
+    border-radius 50%
+    border-radius 50%
+    background-color #017480
+    box-shadow 20vmin -10vmin 0 -12vmin #0e91a0, -26vmin 20vmin 0 -12vmin #0e91a0, -10vmin 32vmin 0 -12vmin #0e91a0
+
+
+.branch
+  width 120%
+  height 4vmin
+  background-color #09585F
+  position absolute
+  right 0
+  bottom 26vmin
+  backface-visibility visible
+  transform-origin: 50% 50% 0px
+  transform perspective(600px) rotateY(-45deg) rotateZ(1deg)
