@@ -1,0 +1,20 @@
+body { 
+  margin: 0;
+  background: #222;
+}
+.svg-container {
+  display: flex;
+  width: 50%;
+  margin: 0 auto;
+  align-items: center;
+  min-height: 100vh;
+}
+.svg-container svg { 
+  min-width: 100%;
+  border-radius: 50%; 
+  box-shadow: 0 50px 30px 10px rgba(0,0,0,0.6); 
+}
+circle { 
+  stroke-width: 58; 
+  stroke: red;
+}
