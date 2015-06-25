@@ -1,0 +1,41 @@
+package common;
+
+public class Queries {
+
+	public static final String LOGIN_GATHER_ACCOUNT_DATA =
+			"SELECT "+
+				"p.id AS PersonID, "+
+				"p.first_name AS FirstName, "+
+				"p.last_name AS LastName, "+
+				"p.email_address AS EmailAdd, "+
+				"p.account_type AS Type "+
+			"FROM  "+
+				"atlas.person AS p "+
+			"WHERE  "+
+				"p.email_address = ? "+
+				"AND "+
+				"p.password = ?;";
+	
+	public static final String CREATE_USER_ACCOUNT = 
+			"INSERT INTO atlas.person (first_name,last_name,email_address,password,create_date,modify_date) "
+			+ "VALUES(?,?,?,?,NOW(),NOW())";
+	
+	public static final String UPDATE_USER_SETTINGS = 
+			"UPDATE atlas.person AS p SET p.first_name = ? , p.last_name = ? , p.email_address = ? , p.modify_date = NOW() WHERE p.id = ?";
+	
+	public static final String UPDATE_USER_SETTINGS_WITH_PASSWORD = 
+			"UPDATE atlas.person AS p SET p.first_name = ? , p.last_name = ? , p.email_address = ? , p.password = ?, p.modify_date = NOW() WHERE p.id = ?";
+	
+	public static final String GATHER_UPDATED_USER_DATA =
+			"SELECT "+
+				"p.id AS PersonID, "+
+				"p.first_name AS FirstName, "+
+				"p.last_name AS LastName, "+
+				"p.email_address AS EmailAdd, "+
+				"p.account_type AS Type "+
+			"FROM  "+
+				"atlas.person AS p "+
+			"WHERE  "+
+				"p.id = ?;";
+	
+}

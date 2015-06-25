@@ -1,0 +1,123 @@
+package common;
+
+public class Queries {
+	
+	public static final String ADMIN_GATHER_FULL_FAMILY_LIST =
+		"SELECT "+
+			"s.id AS PersonId, "+
+			"s.first_name AS FirstName, "+
+			"s.last_name AS LastName, "+
+			"s.email AS Email, "+
+			"ss.id AS AssignedPersonId, "+
+			"ss.first_name AS AssignedFirstName, "+
+			"ss.last_name AS AssignedLastName, "+
+			"ss.email AS AssignedEmail "+
+		"FROM "+
+			"atlas.ss_person AS s "+
+			"LEFT OUTER JOIN "+
+				"atlas.ss_person AS ss "+
+				"ON "+
+				"s.assignedPersonId = ss.id";
+	
+	public static final String ADMIN_REMOVE_USER =
+		"";
+	
+	public static final String ADMIN_ADD_USER =
+		"INSERT INTO atlas.ss_person(first_name,last_name,email,spouse_id,availability,assignedPersonId,gift_list_id,create_date,modify_date) "+
+		"VALUES(?,?,?,?,?,?,?,NOW(),NOW());";
+	
+	public static final String ADMIN_UPDATE_SPOUSE =
+		"";
+	
+	public static final String CHECK_FOR_USERS_RECIPIENT =
+		"SELECT  "+
+			"s.assignedPersonId AS Recipient "+
+		"FROM  "+
+			"atlas.ss_person AS s "+
+		"WHERE "+
+			"s.id=?;";
+	
+	public static final String GET_USERS_RECIPIENT =
+		"SELECT  "+
+			"s.id AS PersonId, "+
+			"s.first_name AS FirstName, "+
+			"s.last_name AS LastName, "+
+			"s.email AS EmailAddress, "+
+			"s.gift_list_id AS GiftListId "+
+		"FROM  "+
+			"atlas.ss_person AS s "+
+		"WHERE "+
+			"s.id=?;";
+	
+	public static final String GATHER_AVAILABLE_RECIPIENTS =
+		"SELECT "+  
+			"s.id AS PersonId "+   
+		"FROM    "+
+			"atlas.ss_person AS s "+  
+		"WHERE   "+
+			"s.id NOT IN (?) "+  
+			"AND  "+
+			"s.availability NOT IN (1) "+ 
+			"AND  "+
+			"s.id NOT IN "+  
+			"(   "+
+				"SELECT "+  
+					"pp.spouse_id "+  
+				"FROM   "+
+					"atlas.ss_person AS pp "+  
+				"WHERE   "+
+					"pp.id IN (?) "+
+			");";
+	
+	public static final String SET_RECIPIENT =
+		"UPDATE "+
+			"atlas.ss_person AS s "+
+		"SET  "+
+			"s.assignedPersonId = ? "+
+		"WHERE "+ 
+			"s.id = ?;";
+	
+	public static final String SET_RECIPIENT_AVAILABILITY =
+		"UPDATE "+
+			"atlas.ss_person AS s "+
+		"SET  "+
+			"s.availability = 1 "+
+		"WHERE "+ 
+			"s.id = ?;";
+	
+	public static final String GIFT_GET_LIST =
+			"SELECT "+
+				"s.id AS GiftId, "+
+				"s.gift_name AS GiftName, "+
+				"s.description AS GiftDescription, "+
+				"s.url AS GiftUrl, "+
+				"s.priority AS GiftOrder, "+
+				"s.create_date AS AddDate "+
+			"FROM "+
+				"atlas.ss_gift_list AS s "+
+			"WHERE "+
+				"s.personId = ? "+
+			"ORDER BY "+
+				"s.create_date;";
+	
+	public static final String ADD_GIFT_TO_LIST =
+		"INSERT INTO atlas.ss_gift_list(personId,gift_name,description,url,priority,create_date) "+
+		"VALUES(?,?,?,?,1,NOW());";
+	
+	public static final String REMOVE_GIFT_FROM_LIST =
+			"DELETE FROM atlas.ss_gift_list "+
+			"WHERE id = ? AND personId = ?;";
+	
+	public static final String GATHER_FULL_RECIPIENT_LIST =
+			"SELECT "+
+				"p.id AS PersonID, "+
+				"CONCAT(p.first_name,' ',p.last_name) AS FullName, "+
+				"CONCAT(pp.first_name,' ',pp.last_name) AS RecipientName "+
+			"FROM "+
+				"atlas.ss_person AS p "+
+				"LEFT OUTER JOIN "+
+					"atlas.ss_person AS pp "+
+					"ON "+
+					"p.assignedPersonId=pp.id;";
+
+}

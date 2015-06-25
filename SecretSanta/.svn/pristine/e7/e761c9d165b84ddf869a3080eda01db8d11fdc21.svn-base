@@ -1,0 +1,47 @@
+package common;
+
+public class Queries {
+	
+	public static final String GATHER_AVAILABLE_RECIPIENTS =
+			"SELECT "+
+				"p.id AS PersonId, "+
+				"p.first_name AS FirstName, "+
+				"p.last_name AS LastName "+
+			"FROM "+
+				"atlas.ss_person AS p "+
+			"WHERE "+
+				"p.available = 0;";
+	
+	public static final String CHECK_FOR_USERS_RECIPIENT = 
+			"SELECT "+
+				"p.recipient AS Recipient "+
+			"FROM "+
+				"atlas.ss_person AS p "+
+			"WHERE "+
+				"p.id = ?";
+	
+	public static final String GET_USERS_RECIPIENT = 
+			"SELECT "+
+				"p.id AS PersonId, "+
+				"p.first_name AS FirstName, "+
+				"p.last_name AS LastName "+
+			"FROM "+
+				"atlas.ss_person AS p "+
+			"WHERE "+
+				"p.id = ?";
+	
+	public static final String SET_RECIPIENT = 
+			"UPDATE atlas.ss_person AS P "+
+				"SET "+
+					"p.recipient = ? "+
+				"WHERE "+	
+					"p.id = ?;";
+	
+	public static final String SET_RECIPIENT_AVAILABILITY = 
+			"UPDATE atlas.ss_person AS P "+
+				"SET "+
+					"p.available = 1 "+
+				"WHERE "+	
+					"p.id = ?;";
+
+}

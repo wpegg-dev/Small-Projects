@@ -1,0 +1,63 @@
+/* body
+{
+	background-image:url('images/holiday-snowflakes.png');
+}  */
+
+#processing{
+	width:100%;
+	text-align:center;
+}
+
+#SantaBody{
+	width: 900px;
+	height: 100%;
+	background: #fff;
+	margin-left: auto;
+	margin-right: auto;
+	overflow: auto;
+	-webkit-border-radius: 28px;
+	-moz-border-radius: 28px;
+	border-radius: 28px;
+	
+}
+
+#SantaHeader{
+	width: 100%;
+	margin-top: 19px;
+	/* margin-left: auto;
+    margin-right: auto; */
+}
+
+#appName{
+	width: 846px;
+	margin-left: 22px;
+}
+
+#RecipientBody{
+	margin-left: 20px;
+	margin-bottom:25px;
+}
+
+
+/***************************************************************************
+***********************                   **********************************
+*********************** CSS FOR Gift List **********************************
+***********************                   **********************************
+***************************************************************************/
+#nameDiv{
+	width: 100%;
+}
+
+#listDiv{
+	width: 100%;
+}
+
+#leftSideMenu{
+	width: 15%;
+	float: left;
+}
+
+#rightSideBody{
+	width: 83%;
+	float: right;
+}

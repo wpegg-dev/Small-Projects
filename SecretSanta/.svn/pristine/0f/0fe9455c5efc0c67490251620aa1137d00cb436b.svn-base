@@ -1,0 +1,452 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<meta name="viewport" content="width=1024" />
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+	<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE8" />
+	
+	<title>Secret Santa</title>
+	
+	<link rel="stylesheet" type="text/css" href="styles/index.css">
+	<link rel="stylesheet" type="text/css" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/themes/ui-lightness/jquery-ui.min.css"> 
+	<link rel="stylesheet" type="text/css" href="styles/jqueryUi.css">
+	
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.js"></script>
+	
+	<script src="plugins/jquery.session.js"></script>
+	
+	<script type="text/javascript">
+	
+	$(document).ready(function(){				
+		$('#processing')
+			.hide()
+			.append('<img src="images/loading.gif"/>')
+			.ajaxStart(function(){
+				$(this).show();
+			})
+			.ajaxStop(function(){
+				$(this).hide();
+			});
+		
+		buildSecrectSantaView();
+		
+		var gifts;
+		var Mygifts;
+		
+				
+		/************************END MAIN*************************/
+			
+				if(!Array.prototype.filter) {
+				    Array.prototype.filter = function (fun) {
+				        "use strict";
+
+				        if ((this === void(0)) || (this === null))
+				        {
+				            throw new TypeError();
+				        }
+
+				        var t = Object(this);
+				        var len = t.length >>> 0;
+				        if (typeof fun !== "function")
+				            throw new TypeError();
+
+				        var res = [];
+				        var thisp = arguments[1];
+				        for (var i = 0; i < len; i++) {
+				            if (i in t) {
+				                var val = t[i]; // in case fun mutates this
+				                if (fun.call(thisp, val, i, t))
+				                    res.push(val);
+				            }
+				        }
+
+				        return res;
+				    };
+				}
+			});//Closes $(document).ready(
+					
+		
+			buildSecrectSantaView = function(){
+				
+				getRecipient($.session.get("userId"));
+				$('#processing').show();
+				
+				setTimeout(function(){
+					
+					$('#processing').hide();
+					
+				},2000);
+				
+				
+			};
+			
+			getRecipient = function(userId){
+				$.ajax({ 
+					url:"/SecretSanta/SecretSantaDataService",
+					data:{
+						"personId": userId,
+						"method":"getRecipient"
+					},
+					type:'POST',
+					dataType:"json",
+					success: function(html){
+						$('#globalSettings').data('recipientData',html);
+						
+						displayRecipient(html['recipientData'][0]['Person ID'],html['recipientData'][0]['First Name'],html['recipientData'][0]['Last Name'],html['recipientData'][0]['Gift List ID']);
+						
+					},
+					error: function(html){
+						alert("Error Gathering Data. Please try again.");
+					}
+				}); //Closes ajax
+			};
+			
+			displayRecipient = function(personId,fName,lName,giftListId){
+				
+				$('#RecipientBody')
+					.append(
+						$('<div/>')
+							.attr({'id':'leftSideMenu'})
+							.append(
+								$('<ul/>')
+									.attr({'id':'ssRecipNav'})
+									.append(
+										$('<li/>')
+											.append(
+												$('<label/>')
+													.attr({'id':'mygifts'})
+													.text('My Gift List')
+													.click(function(){
+														var _me = $.session.get("userId");
+														
+														displayMyGifts(_me);
+													})
+											)
+									)
+									.append(
+										$('<li/>')
+											.append(
+												$('<label/>')
+													.attr({'id':'recipName'})
+													.text('My Secret Santa Recipient')
+													.click(function(){
+														displayMyRecip(personId,fName,lName);
+													})
+											)
+									)
+									.append(
+										$('<li/>')
+											.append(
+												$('<label/>')
+													.attr({'id':'recipGiftList'})
+													.text('My Recipient\'s List')
+													.click(function(){
+														displayMyRecipGiftList(personId,giftListId);
+													})
+											)
+									)		
+							)
+					)
+					.append(
+						$('<div/>')
+							.attr({'id':'rightSideBody'})
+					);
+			};
+			
+			displayMyRecip = function(personId,fName,lName){
+				$('#nameDiv').remove();
+				$('#listDiv').remove();
+				$('#MyListDiv').remove();
+				$('#addGiftsButton').remove();
+				
+				$('#rightSideBody')
+					.append(
+						$('<div/>')
+							.attr({'id':'nameDiv'})
+							.append(
+								$('<label/>')
+									.attr({'id':'recipName'})
+									.text('My Secret Santa Recipient is: ' + fName + ' ' + lName)		
+							)
+					);
+			};
+			
+			displayMyGifts = function(myID){
+				$('#nameDiv').remove();
+				$('#listDiv').remove();
+				$('#MyListDiv').remove();
+				$('#addGiftsButton').remove();
+				
+				$('#processing').show();
+				gatherMyListItems(myID);
+				
+				setTimeout(function(){
+				
+					$('#processing').hide();
+					
+					var MyGiftList = Mygifts;
+					
+					$('#rightSideBody')
+						.append(
+							$('<div/>')
+								.attr({'id':'MyListDiv'})
+								.append(
+									$('<table/>')
+										.attr({'id':'recipientGiftList'})
+										.append(
+											$('<tr/>')
+												.append(
+													$('<td/>')
+														.attr({'visible':'false'})
+												)
+												.append(
+													$('<td/>')
+														.append(
+															$('<label/>')
+																.text('Gift Name')
+														)
+												)
+												.append(
+													$('<td/>')
+														.append(
+															$('<label/>')
+																.text('Description')
+														)
+												)
+												.append(
+													$('<td/>')
+														.append(
+															$('<label/>')
+																.text('Website')
+														)		
+												)
+												.append(
+													$('<td/>')	
+												)
+										)
+								)
+						);
+					
+					for(var i=0;i<MyGiftList.length;i++)
+					{
+						curData = MyGiftList[i];
+						
+						$('#recipientGiftList')
+							.append(
+								$('<tr/>')
+									.append(
+										$('<td/>')
+											.attr({'visible':'false'})
+											.append(
+												$('<label/>')
+													.text(curData['Gift ID'])
+											)
+									)
+									.append(
+										$('<td/>')
+											.append(
+												$('<label/>')
+													.text(curData['Gift Name'])
+											)
+									)
+									.append(
+										$('<td/>')
+											.append(
+												$('<label/>')
+													.text(curData['Gift Description'])
+											)
+									)
+									.append(
+										$('<td/>')
+											.append(
+												$('<label/>')
+													.text(curData['URL'])
+											)
+									)
+									.append(
+										$('<td/>')
+											.append(
+												$('<button/>')
+													.text('Remove')
+													.attr('id',curData['Gift ID'])
+													.click(function(){
+														removeMyGift($(this));
+													})
+											)
+									)
+							);
+					}
+					
+					
+					$('#rightSideBody')
+						.append(
+							$('<button/>')
+								.attr({'id':'addGiftsButton'})
+								.text('Add Gifts')
+						)
+					
+				},3000);
+				
+			};
+			
+			displayMyRecipGiftList = function(personId){
+				$('#nameDiv').remove();
+				$('#listDiv').remove();
+				$('#MyListDiv').remove();
+				$('#addGiftsButton').remove();
+				
+				$('#processing').show();
+				gatherListItems(personId);
+				
+				setTimeout(function(){
+				
+					$('#processing').hide();
+					
+					var giftList = gifts;
+					
+					$('#rightSideBody')
+						.append(
+							$('<div/>')
+								.attr({'id':'listDiv'})
+								.append(
+									$('<table/>')
+										.attr({'id':'recipientGiftList'})
+										.append(
+											$('<tr/>')
+												.append(
+													$('<td/>')
+														.append(
+															$('<label/>')
+																.text('Gift Name')
+														)
+												)
+												.append(
+													$('<td/>')
+														.append(
+															$('<label/>')
+																.text('Description')
+														)
+												)
+												.append(
+													$('<td/>')
+														.append(
+															$('<label/>')
+																.text('Website')
+														)		
+												)
+										)
+								)
+						);
+					
+					for(var i=0;i<giftList.length;i++)
+					{
+						curData = giftList[i];
+						
+						$('#recipientGiftList')
+							.append(
+								$('<tr/>')
+									.append(
+										$('<td/>')
+											.append(
+												$('<label/>')
+													.text(curData['Gift Name'])
+											)
+									)
+									.append(
+										$('<td/>')
+											.append(
+												$('<label/>')
+													.text(curData['Gift Description'])
+											)
+									)
+									.append(
+										$('<td/>')
+											.append(
+												$('<label/>')
+													.text(curData['URL'])
+											)
+									)
+							);
+					}
+					
+				},3000);
+				
+			};
+			
+			removeMyGift = function(gift){
+				$.ajax({ 
+					url:"/SecretSanta/SecretSantaDataService",
+					data:{
+						"giftId": gift.attr('id'),
+						"personId": $.session.get('userId'),
+						"method":"removeGift"
+					},
+					type:'POST',
+					dataType:"json",
+					success: function(html){
+						$('#globalSettings').data('giftListData',html);
+						displayMyGifts($.session.get("userId"));
+					},
+					error: function(html){
+						alert("Error Gathering Gift List Data. Please try again.");
+					}
+				}); //Closes ajax
+			};
+			
+			gatherListItems = function(personId){
+				$.ajax({ 
+					url:"/SecretSanta/SecretSantaDataService",
+					data:{
+						"personId": personId,
+						"method":"getList"
+					},
+					type:'POST',
+					dataType:"json",
+					success: function(html){
+						$('#globalSettings').data('giftListData',html);
+						gifts = html['giftListData'];
+						
+					},
+					error: function(html){
+						alert("Error Gathering Gift List Data. Please try again.");
+					}
+				}); //Closes ajax
+			};
+			
+			gatherMyListItems = function(personId){
+				$.ajax({ 
+					url:"/SecretSanta/SecretSantaDataService",
+					data:{
+						"personId": personId,
+						"method":"getList"
+					},
+					type:'POST',
+					dataType:"json",
+					success: function(html){
+						$('#globalSettings').data('giftListData',html);
+						Mygifts = html['giftListData'];
+						
+					},
+					error: function(html){
+						alert("Error Gathering Gift List Data. Please try again.");
+					}
+				}); //Closes ajax
+			};
+	
+	</script>
+	
+</head>
+<body>
+	<div id="SantaBody">
+		<div id="SantaHeader">
+			<img id="appName" src="images/header.jpg"></img>
+		</div>
+		<div id="processing"></div>
+		<div id="RecipientBody">
+		</div>
+	</div>
+</body>
+</html>

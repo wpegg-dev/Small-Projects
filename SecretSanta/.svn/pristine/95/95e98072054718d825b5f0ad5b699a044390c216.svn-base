@@ -1,0 +1,182 @@
+/* body
+{
+	background-image:url('images/holiday-snowflakes.png');
+}  */
+
+#processing{
+	width:100%;
+	text-align:center;
+}
+
+#SantaBody{
+	width: 900px;
+	height: 100%;
+	background: #fff;
+	margin-left: auto;
+	margin-right: auto;
+	overflow: auto;
+	-webkit-border-radius: 28px;
+	-moz-border-radius: 28px;
+	border-radius: 28px;
+	
+}
+
+#SantaHeader{
+	width: 100%;
+	margin-top: 19px;
+	/* margin-left: auto;
+    margin-right: auto; */
+}
+
+#appName{
+	width: 846px;
+	margin-left: 22px;
+}
+
+#RecipientBody{
+	margin-left: 20px;
+	margin-bottom:25px;
+}
+
+
+/***************************************************************************
+***********************                   **********************************
+*********************** CSS FOR Gift List **********************************
+***********************                   **********************************
+***************************************************************************/
+#nameDiv{
+	width: 100%;
+}
+
+#listDiv{
+	width: 100%;
+}
+
+#leftSideMenu{
+	width: 100px;
+	float: left;
+}
+
+#ssRecipNav li:hover{
+	color: #000;
+}
+
+#rightSideBody{
+	width: 600px;
+	float: right;
+}
+
+
+.RemoveButton:hover {
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #ce0100), color-stop(1, #fe1a00) );
+	background:-moz-linear-gradient( center top, #ce0100 5%, #fe1a00 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ce0100', endColorstr='#fe1a00');
+	background-color:#ce0100;
+}
+.RemoveButton:active {
+	position:relative;
+	top:1px;
+}
+
+#addGiftsButton:hover {
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #8cb82b), color-stop(1, #9dce2c) );
+	background:-moz-linear-gradient( center top, #8cb82b 5%, #9dce2c 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#8cb82b', endColorstr='#9dce2c');
+	background-color:#8cb82b;
+}
+#addGiftsButton:active {
+	position:relative;
+	top:1px;
+}
+
+#recipientGiftList {
+	margin:0px;padding:0px;
+	width:100%;
+	border:1px solid #2d3dc6;
+	
+	-moz-border-radius-bottomleft:9px;
+	-webkit-border-bottom-left-radius:9px;
+	border-bottom-left-radius:9px;
+	
+	-moz-border-radius-bottomright:9px;
+	-webkit-border-bottom-right-radius:9px;
+	border-bottom-right-radius:9px;
+	
+	-moz-border-radius-topright:9px;
+	-webkit-border-top-right-radius:9px;
+	border-top-right-radius:9px;
+	
+	-moz-border-radius-topleft:9px;
+	-webkit-border-top-left-radius:9px;
+	border-top-left-radius:9px;
+}#recipientGiftList table{
+    border-collapse: collapse;
+    border-spacing: 0;
+	width:100%;
+	height:100%;
+	margin:0px;padding:0px;
+}#recipientGiftList tr:last-child td:last-child {
+	-moz-border-radius-bottomright:9px;
+	-webkit-border-bottom-right-radius:9px;
+	border-bottom-right-radius:9px;
+}
+#recipientGiftList table tr:first-child td:first-child {
+	-moz-border-radius-topleft:9px;
+	-webkit-border-top-left-radius:9px;
+	border-top-left-radius:9px;
+}
+#recipientGiftList table tr:first-child td:last-child {
+	-moz-border-radius-topright:9px;
+	-webkit-border-top-right-radius:9px;
+	border-top-right-radius:9px;
+}#recipientGiftList tr:last-child td:first-child{
+	-moz-border-radius-bottomleft:9px;
+	-webkit-border-bottom-left-radius:9px;
+	border-bottom-left-radius:9px;
+}#recipientGiftList tr:hover td{
+	
+}
+#recipientGiftList tr:nth-child(odd){ background-color:#aad4ff; }
+#recipientGiftList tr:nth-child(even)    { background-color:#ffffff; }#recipientGiftList td{
+	vertical-align:middle;
+	border:1px solid #2d3dc6;
+	border-width:0px 1px 1px 0px;
+	text-align:left;
+	padding:9px;
+	font-size:10px;
+	font-family:Arial;
+	font-weight:normal;
+	color:#000000;
+}#recipientGiftList tr:last-child td{
+	border-width:0px 1px 0px 0px;
+}#recipientGiftList tr td:last-child{
+	border-width:0px 0px 1px 0px;
+}#recipientGiftList tr:last-child td:last-child{
+	border-width:0px 0px 0px 0px;
+}
+#recipientGiftList tr:first-child td{
+		background:-o-linear-gradient(bottom, #007fff 5%, #0000ff 100%);	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #007fff), color-stop(1, #0000ff) );
+	background:-moz-linear-gradient( center top, #007fff 5%, #0000ff 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr="#007fff", endColorstr="#0000ff");	background: -o-linear-gradient(top,#007fff,0000ff);
+	background-color:#007fff;
+	border:0px solid #2d3dc6;
+	text-align:center;
+	border-width:0px 0px 1px 1px;
+	font-size:14px;
+	font-family:Georgia;
+	font-weight:bold;
+	color:#ffffff;
+}
+#recipientGiftList tr:first-child:hover td{
+	background:-o-linear-gradient(bottom, #007fff 5%, #0000ff 100%);	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #007fff), color-stop(1, #0000ff) );
+	background:-moz-linear-gradient( center top, #007fff 5%, #0000ff 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr="#007fff", endColorstr="#0000ff");	background: -o-linear-gradient(top,#007fff,0000ff);
+
+	background-color:#007fff;
+}
+#recipientGiftList tr:first-child td:first-child{
+	border-width:0px 0px 1px 0px;
+}
+#recipientGiftList tr:first-child td:last-child{
+	border-width:0px 0px 1px 1px;
+}

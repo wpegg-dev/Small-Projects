@@ -1,0 +1,189 @@
+body
+{
+	background-image:url('images/bg-blue.jpg');
+} 
+
+#processing{
+	width:100%;
+	text-align:center;
+}
+
+#mainBody{
+	width: 70%;
+	height: 100%;
+	background: #fff;
+	margin-left: auto;
+	margin-right: auto;
+	overflow: auto;
+}
+#header, #links, #nav, #mainBody{
+	font-family: "Arial", sans-serif ;
+}
+#footer{
+	background: #000;
+	width: 70%;
+	height: 40px;
+	margin: 0 auto;
+	color: #fff;
+	text-align: center;
+}
+#leftMain{
+	width: 38%;
+	float: left;
+}
+#leftMain span{
+	color: #777;
+}
+#welcomeInfo{
+	margin: 10px 0 0 15px;
+}
+#rightMain{
+	width: 60%;
+	height: 90%;
+	margin: 10px 15px 15px 0;
+	float: right;
+	background-color: #ebeeff;
+	-webkit-box-shadow: 4px 4px 6px #aaa;
+	-moz-box-shadow: 4px 4px 6px #aaa;
+	box-shadow: 4px 4px 6px #aaa;
+}
+#rightMain h3{
+	text-align: center;
+}
+#login, #signup{
+	float: left;
+	margin-left: 25px;
+}
+#signup{
+	margin-right: 25px;
+}
+#login span, #login input{
+	clear: both;
+	float: left;
+}
+#formText, #formData{
+	float: left;
+}
+#formText span, #formData input{
+	clear: both;
+	float: left;
+}
+#formText span{
+	height: 16px;
+	padding: 5px 0;
+}
+#formData{
+	margin-left: 30px;
+}
+#login input, #formData input{
+	width: 140px;
+	border-radius: 5px;
+}
+#login .IndexLoginButton, #signup .IndexLoginButton{
+	height: 25px;
+	border-radius: 10px;
+	color: #efefe9;
+	margin: 0 0 5px 0;
+	background: #004788;
+	letter-spacing: 1px;
+}
+#login .IndexLoginButton:hover, #signup .IndexLoginButton:hover{
+	color: rgb(255, 196, 37);
+}
+
+#userHeader{
+	width: 400px;
+	padding-top: 6.5px;
+	float: right;
+	height: 30px
+}
+#userNav ul{
+	padding: 0;
+	margin: 0;
+	float: right;
+}
+#userNav li{
+	list-style: none;
+	float: left;
+	padding: 4px 10px;
+	color: #000099;
+}
+#userNav li:hover{
+	color: #0099FF;
+}
+#userNav label{
+	cursor: pointer;
+}
+
+/************************************/
+/************************************/
+/******  website header css *********/
+/************************************/
+/************************************/
+ul.topnav {
+	list-style: none;
+	padding: 0 20px;	
+	margin: 10px 0 0 0;
+	float: left;
+	width: 98%;
+	font-size: 1.2em;
+	background: linear-gradient(to bottom, #1e5799 0%,#2989d8 50%,#207cca 51%,#7db9e8 100%);
+}
+ul.topnav li {
+	float: left;
+	margin: 0;	
+	padding: 0 15px 0 0;
+	position: relative; /*--Declare X and Y axis base for sub navigation--*/
+}
+ul.topnav li label{
+	padding: 10px 5px;
+	color: #fff;
+	display: block;
+	text-decoration: none;
+	float: left;
+}
+ul.topnav li label:hover{
+	cursor: pointer;
+	color: #000099;
+}
+ul.topnav li span { /*--Drop down trigger styles--*/
+	width: 17px;
+	height: 35px;
+	float: left;
+}
+
+ul.topnav li span.subhover {background-position: center bottom; cursor: pointer;} /*--Hover effect for trigger--*/
+ul.topnav li ul.subnav {
+	list-style: none;
+	position: absolute; /*--Important - Keeps subnav from affecting main navigation flow--*/
+	left: 0; top: 35px;
+	background: linear-gradient(to bottom, #1e5799 0%,#207cca 13%,#2989d8 41%,#7db9e8 100%);
+	margin: 0; padding: 0;
+	display: none;
+	float: left;
+	width: 170px;
+}
+ul.topnav li ul.subnav li{
+	margin: 0; padding: 0;
+	/*border-top: 1px solid #252525; --Create bevel effect--*/
+	/*border-bottom: 1px solid #444; /*--Create bevel effect--*/
+	clear: both;
+	width: 170px;
+}
+ul.subnav li{
+	margin-top:15px;
+}
+html ul.topnav li ul.subnav li label {
+	float: left;
+	width: 145px;
+	background: linear-gradient(to bottom, #1e5799 0%,#207cca 0%,#2989d8 0%,#7db9e8 100%);
+	padding-left: 5px;
+}
+html ul.topnav li ul.subnav li label:hover { /*--Hover effect for subnav links--*/
+	background: linear-gradient(to bottom, #1e5799 0%,#207cca 0%,#2989d8 0%,#7db9e8 100%);
+}
+
+#siteLoader{
+	width:99%;
+	height: 95%;
+}
