@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<!-- Author: William Pegg
+---- Date: 2/20/2014
+---- Description: This is a simple web page which allows user to compare options against each other 
+---- to help determine which they may prefer.  -->
+<html>
+  <head>
+  <title>WPPCA</title>
+    <script data-require="angular.js@*" data-semver="1.2.0-rc3-nonmin" src="http://code.angularjs.org/1.2.0-rc.3/angular.js"></script>
+    <script data-require="ng-table@*" data-semver="0.3.0" src="http://bazalt-cms.com/assets/ng-table/0.3.0/ng-table.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/angular-ui/0.4.0/angular-ui.min.js"></script>
+    <script src="js/script.js"></script>
+	<script type="text/javascript" src="js/lawnchair-0.6.1.js"></script>
+
+    <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/themes/smoothness/jquery-ui.css" />
+    <link data-require="ng-table@*" data-semver="0.3.0" rel="stylesheet" href="http://bazalt-cms.com/assets/ng-table/0.3.0/ng-table.css" />
+    <link data-require="bootstrap-css@*" data-semver="3.0.0" rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+
+    
+  </head>
+  <body>
+	  <div id="main" ng-app="main">
+	    <div ng-controller="TableCtrl">
+	    	<label class="">Enter Option: </label>
+	        <input type="text" ng-model="optName" >
+	        <button class="btn btn-info" ng-click="addItem()">Add Option</button>
+	        <button class="btn btn-default" ng-click="reset()">Start Over</button>
+	        <div id="alertDiv" class="alert alert-dismissable alert-danger">
+		    	<button id="closeAlert" type="button" class="close" data-dismiss="alert">x</button>
+		    	<div id="alertMessage"><label id="message"></label></div>
+	  		</div>
+	        <hr>
+	        <label>Weighted Preference Paired Comparison Analysis</label>
+	        <br>
+	        <label id="howTo">Click A Box To Enter Preference</label>
+	        <table class="table table-bordered">
+	        	<tbody>
+		        	<tr>
+		        		<td></td>
+		        		<td ng-repeat="option in options">{{option.optionName}}</td>
+		        	</tr>
+		        	<tr ng-repeat="t in table">
+		        		<td id="{{element.id}}" ng-repeat="element in t track by $index" class="{{element.className}}" ng-click="elementClicked(element.className,$event,$index)">{{element.element}}</td>
+		        		<!--  <td style="width:45px;border-color:#fff;"><img ng-click="removeOption($event,$index)" src="images/notification_error.png"></td>-->
+		        	</tr>
+	        	</tbody>
+	        </table>
+	        <hr>
+	        <label id="weigthLabel" class="label label-info" ng-repeat="option in weighted_values">Option: {{option.optionName}} Count: {{option.count}}</label>
+	    </div>
+	</div>
+  </body>
+</html>
+
