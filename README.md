@@ -25,3 +25,6 @@ on my raspberry pi so I can have a constant weather feed at home.
 #Weighted Preference Paired Comparison Analysis
 This is a HTML/AngularJS application that I worked on to start learning more about AngularJS. It allows the user to enter a series of options
 and the weight them against each other in order to help decide which option they should choose.
+
+#Icon Sets
+This is a place I store free image/icon sets I find online. For anyone looking for great free resources you should think about looking at http://speckyboy.com/
