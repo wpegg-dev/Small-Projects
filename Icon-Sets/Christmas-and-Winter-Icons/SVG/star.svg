@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 17.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="star" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 79.9995 79.9995" enable-background="new 0 0 79.9995 79.9995" xml:space="preserve">
+<circle id="star-label" fill="#7C4D46" cx="40" cy="39.9997" r="39.9997"/>
+<g id="star-star">
+	<polygon fill="#8BD6D0" points="40.001,14.8804 46.2349,34.0688 66.4116,34.0688 50.0893,45.9302 56.3218,65.1167 40.001,53.2602 
+		23.6782,65.1167 29.9106,45.9302 13.5879,34.0688 33.7651,34.0688 	"/>
+	<g>
+		<polygon fill="#43BFBD" points="40.0361,15.5893 40.0361,43.561 46.2768,33.7778 		"/>
+		<polygon fill="#43BFBD" points="66.063,34.2314 40.3271,43.5298 50.2798,46.1177 		"/>
+		<polygon fill="#43BFBD" points="55.6509,64.5425 40.2207,43.189 40.1435,53.3423 		"/>
+		<polygon fill="#43BFBD" points="24.0908,64.4663 40.4756,43.439 30.1777,45.8374 		"/>
+		<polygon fill="#43BFBD" points="14.0425,34.1167 40.4521,43.6733 33.7671,34.2407 		"/>
+	</g>
+</g>
+</svg>
