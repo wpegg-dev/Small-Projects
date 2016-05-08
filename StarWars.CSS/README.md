@@ -6,8 +6,8 @@ Star Wars Intro is a small CSS Library to build your own Star Wars-esk intro. Us
 
 ####Requirements
 To install the Star Wars Into you'll need:
-..* HTML
-..* CSS
+- HTML
+- CSS
 
 ####Installation
 The installation process is simple. Download the css file and add the html sample. You can put anything you want inside of the 'content-body'. The CSS will do the rest.
