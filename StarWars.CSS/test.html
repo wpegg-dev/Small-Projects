@@ -2,6 +2,16 @@
 	<head>
 		<!-- Place in document head -->
 		<link rel="stylesheet" href="assets/starwarsintro.css">
+		<script type="text/javascript">
+			var audio = document.createElement("audio");
+			audio.src="assets/StarWars.mp3";
+			audio.addEventListener("canplaythrough", function () {
+					setTimeout(function(){
+						audio.play();
+					},
+					2000);
+			}, false); 
+		</script>
 	</head>
 	<body background="assets/stars-bg.jpg">
 		
@@ -16,10 +26,6 @@
 		  <!-- Logo Image or Text goes in here -->
 		  <h2 class="main-logo">
 			<img src="assets/star-wars-intro.png">
-			<audio autoplay>
-				<source src="assets/StarWars.mp3" type="audio/mpeg">
-				<p>Your browser does not support the audio element.</p>
-			</audio>
 		  </h2>
 
 		  <!-- All Scrolling Content Goes in here -->
