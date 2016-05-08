@@ -28,3 +28,6 @@ and the weight them against each other in order to help decide which option they
 
 #Icon Sets
 This is a place I store free image/icon sets I find online. For anyone looking for great free resources you should think about looking at http://speckyboy.com/
+
+#StarWars.CSS
+This is a css plugin you can use to give your site the StarWars scrolling feature using only CSS! Super easy to use and set up. Thank you [polarnotion](https://polarnotion.github.io/starwarsintro/)
