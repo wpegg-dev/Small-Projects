@@ -31,3 +31,6 @@ This is a place I store free image/icon sets I find online. For anyone looking f
 
 #StarWars.CSS
 This is a css plugin you can use to give your site the StarWars scrolling feature using only CSS! Super easy to use and set up. Thank you [polarnotion](https://polarnotion.github.io/starwarsintro/)
+
+#SVG-Meter-Gauge
+SVG meter gauge
